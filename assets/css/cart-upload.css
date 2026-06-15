@@ -1,0 +1,57 @@
+.cx-cart-upload-wrapper {
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	background: #fafafa;
+	border-radius: 6px;
+}
+
+.cx-label { display:block; margin-bottom:6px; font-size:14px; }
+
+.cx-uploaded-files {
+	margin-top: 10px;
+	display: flex;
+	gap: 10px;
+}
+
+.cx-file-item {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	background: #fff;
+	padding:0;
+	border: 1px solid #ddd;
+	margin-bottom: 5px;
+	border-radius: 4px;
+	max-width:80px;
+	position:relative;
+}
+.cx-file-item img{
+	width:100%!important;
+	display:block;
+	border-radius:5px;
+}
+.cx-file-item.uploading {
+	opacity: 0.7;
+}
+
+.cx-file-item.error {
+	background: #fff0f0;
+	border-color: #f4c2c2;
+	color: #a00;
+}
+
+.cx-remove-file {
+	background: #e63946;
+	color: white;
+	border: none;
+	padding: 4px 8px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size:10px!important;
+	position:absolute;
+	top:-6px;right:-6px;
+}
+
+.cx-file-name { margin-right: 12px; overflow-wrap: anywhere; display:none; }
