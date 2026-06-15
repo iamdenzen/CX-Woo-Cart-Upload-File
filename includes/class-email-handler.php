@@ -48,20 +48,12 @@ class CXCF_Email_Handler {
 			return $attachments;
 		}
 
-		$order_folder = trailingslashit(
-			$this->file_manager->get_order_upload_dir()
-		) . $order->get_id() . '/';
-
-		if ( ! is_dir( $order_folder ) ) {
-			return $attachments;
-		}
-
-		foreach ( glob( $order_folder . '*.*' ) as $file ) {
-
-			if ( file_exists( $file ) ) {
-				$attachments[] = $file;
-			}
-		}
+		foreach (
+            $this->file_manager->get_order_files( $order->get_id() )
+            as $file
+        ) {
+            $attachments[] = $file;
+        }
 
 		return $attachments;
 	}

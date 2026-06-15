@@ -115,4 +115,5 @@ class CXCF_Upload_Handler {
 			]
 		);
 	}
+
 }

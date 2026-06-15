@@ -224,4 +224,28 @@ class CXCF_File_Manager {
 
 		@rmdir( $order_folder );
 	}
+
+	public function get_order_folder( $order_id ) {
+
+        return trailingslashit(
+            $this->order_upload_dir . $order_id
+        );
+    }
+
+    public function get_order_files( $order_id ) {
+
+        $files = [];
+
+        $order_folder = $this->get_order_folder( $order_id );
+
+        if ( ! is_dir( $order_folder ) ) {
+            return $files;
+        }
+
+        foreach ( glob( $order_folder . '*.*' ) as $file ) {
+            $files[] = $file;
+        }
+
+        return $files;
+    }
 }
